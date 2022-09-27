@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# ToDo list interview project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Thanks for taking the time to interview! We really appreciate it, and we hope to see the best of your work.
 
-## Available Scripts
+## Rules
 
-In the project directory, you can run:
+Please do this interview project on your own, without the help of anyone else.
+With that being said, you are more than welcome to use the internet.
+Google and Stack Overflow are invaluable tools in our daily lives, and we wouldn't expect you to do your best work without them.
+We really like to see every part of your development process, so please record your screen while you work.
 
-### `yarn start`
+In addition to writing the code required by the instructions, please write down your answers to the questions in the instructions.
+Please include the answers directly in this README file.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Please make a fork of this repo on your own GitHub account and then clone it down to your personal computer.
 
-### `yarn test`
+You should be able to spin this app up using `yarn install` and `yarn start` (or `npm` if you prefer).
+If you have trouble, please don't hesistate to reach out.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Important Project contents
 
-### `yarn build`
+There are a few files that are important for this app:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### App.tsx
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The main logic of the "frontend" of this app is in App.tsx. You should start your work there.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ApiClient.ts
 
-### `yarn eject`
+An API client that interacts with a fake database. Please read this, but you should not need to edit it until the bonus section
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Instructions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. The page doesn't change when you click the "Add ToDo" button. Why not?
+   Please fix this bug and describe the tradeoffs in your implementation. Would your solution work if there were lots of (10,000+) todos?
+   It's perfectly fine if the answer is no, but please discuss what would go wrong when the number of ToDos increases significantly
+2. "Mark Done" doesn't appear to work at all. Why not?
+   Please fix this bug and make sure the page updates once the ToDo has been marked as "done".
+   How could the API have been better designed to make the bug more noticable?
+3. The ApiClient takes an argument `mockDelay`. Please set that to `true` on line 5 of `App.tsx`.
+   Please add some visual indication to the UI during the initial "loading" time and any time the page is waiting for the server to respond.
+   The design doesn't need to look good, but it should indicate what the user can and cannot do.
+4. Bonus! Make the todo items re-orderable using drag-and-drop. You are more than welcome to use a 3rd party library for this, or you can roll vanilla.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tips
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- The project needs some organization. Feel free to create as many files and/or components as you need.
+- Git is your friend. Please commit often and use descriptive commit messages.
+- Get it working and then make it look good. Don't get lost in the perfect solution before you have a working solution.
+- Include more comments than you would in normal code. This will help us understand your thought process.
+- Take breaks when you need them.
 
-## Learn More
+## Responses
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(your responses to the questions in the instructions should go here):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.
+2.
+3.
+
+## Submitting
+
+To submit your code, please make a pull request from your fork of this repo to the upstream branch at https://github.com/GrowtTopline/todo-interview.
+
+To submit your screen recording, please reach out to schedule a time we can use https://webwormhole.io/ to transfer the large file.

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ApiClient, ToDo } from './api';
+import { ApiClient, ToDo } from './ApiClient';
 import './App.css';
 
-const apiClient = new ApiClient();
+const apiClient = new ApiClient(false);
 
 function App() {
   const [todos, setTodos] = useState<ToDo[]>([]);
@@ -18,10 +18,27 @@ function App() {
   return (
     <>
       <h1>To Do List</h1>
-      <input value={label} onChange={(e) => setLabel(e.target.value)} />
-      <button onClick={() => apiClient.addTodo(label)}>Add ToDo</button>
+
+      <div className="add-todo-container">
+        <input
+          value={label}
+          onChange={(e) => setLabel(e.target.value)}
+          placeholder="Buy groceries"
+        />
+        <button onClick={() => apiClient.addTodo(label)}>Add ToDo</button>
+      </div>
+
       {todos.map((todo) => (
-        <div key={todo.id}>{todo.label}</div>
+        <div key={todo.id} className="todo-item">
+          <label
+            style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
+          >
+            {todo.label}
+          </label>
+          <button onClick={() => apiClient.toggleDone(todo.label)}>
+            Mark {todo.done ? 'Undone' : 'Done'}
+          </button>
+        </div>
       ))}
     </>
   );
