@@ -16,23 +16,6 @@ In addition to writing the code required by the instructions, write down your an
 
 Make a fork of this repo on your own GitHub account and then clone it down to your personal computer.
 
-You should be able to spin this app up using `yarn install` and `yarn start` (or `npm` if you prefer).
-If you have trouble, please don't hesistate to reach out.
-
-## Important Project contents
-
-There are a few files that are important for this app:
-
-### App.tsx
-
-The main logic of the "frontend" of this app is in App.tsx. You should start your work there.
-
-### ApiClient.ts
-
-An API client that interacts with a fake database. Read the file over, but you should not need to edit it until the bonus section
-
-### Prerequisites
-
 - You'll need to run an instance of a Postgres database on your development machine.
   The `docker-compose.yml` file includes instructions to spin up an instance of Postgres and expose port 5432.
   If you can't use Docker, please send elliot@growtopline.com an email and we can figure something else out for you.
@@ -42,6 +25,20 @@ An API client that interacts with a fake database. Read the file over, but you s
 - Install dependencies for the project with `yarn install`.
 - Start the backend server with `yarn server`.
 - Start the frontend development server with `yarn start`.
+
+If you have trouble, please don't hesistate to reach out.
+
+## Important Project contents
+
+There are a few files that are important for this app:
+
+### src/App.tsx
+
+The main logic of the "frontend" of this app is in App.tsx. You should start your work there.
+
+### server/main.ts
+
+The server that acts as an intermediary between the front end and the database.
 
 ## Instructions
 
