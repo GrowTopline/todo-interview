@@ -31,6 +31,18 @@ The main logic of the "frontend" of this app is in App.tsx. You should start you
 
 An API client that interacts with a fake database. Read the file over, but you should not need to edit it until the bonus section
 
+### Prerequisites
+
+- You'll need to run an instance of a Postgres database on your development machine.
+  The `docker-compose.yml` file includes instructions to spin up an instance of Postgres and expose port 5432.
+  If you can't use Docker, please send elliot@growtopline.com an email and we can figure something else out for you.
+- Once you've started the databse, please run the initialization script:
+  `psql -f server/db-init.sql postgresql://local:local@localhost:5432/interview`.
+  This will create a table `todo` in your database with columns `label` and `done`.
+- Install dependencies for the project with `yarn install`.
+- Start the backend server with `yarn server`.
+- Start the frontend development server with `yarn start`.
+
 ## Instructions
 
 1. The page doesn't change when you click the "Add ToDo" button. Why not?
