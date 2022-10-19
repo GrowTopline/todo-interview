@@ -1,23 +1,40 @@
 import express, { Express, Request, Response } from 'express';
+import cors from 'cors';
 import pg from 'pg';
-const connectionString = 'postgresql://local:local@localhost:5432/interview';
-
-const client = new pg.Client({ connectionString });
 
 const app: Express = express();
-const port = process.env.PORT || 8080;
-
-app.get('/', async (req: Request, res: Response) => {
-  const result = await client.query('SELECT $1::text as message', [
-    'Hello world!',
-  ]);
-  res.send(`Express + TypeScript Server: ${result.rows[0].message}`);
+const client = new pg.Client({
+  connectionString: 'postgresql://local:local@localhost:5432/interview',
 });
 
-app.listen(port, async () => {
+app.use(cors());
+app.use(express.json());
+
+// Route to get all todos
+app.get('/todo', async (_: Request, res: Response) => {
+  const result = await client.query('SELECT * from todo');
+  res.send(result.rows);
+});
+
+// Route to create a todo
+app.post('/todo', async (req: Request, res: Response) => {
+  const result = await client.query(
+    'INSERT INTO todo (label) VALUES ($1) RETURNING *',
+    [req.body.label]
+  );
+  res.send(result.rows[0]);
+});
+
+// Route to toggle the 'done' state of a todo
+app.put('/todo/:id', async (req: Request, res: Response) => {
+  const result = await client.query(
+    'UPDATE todo SET done = NOT done WHERE id = $1 RETURNING *',
+    [req.params.id]
+  );
+  res.send(result.rows[0]);
+});
+
+app.listen(8080, async () => {
   await client.connect();
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+  console.log('Server is running at https://localhost:8080');
 });
-
-process.on('SIGINT', async () => client.end());
-process.on('SIGTERM', async () => client.end());
