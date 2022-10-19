@@ -42,7 +42,7 @@ An API client that interacts with a fake database. Read the file over, but you s
 3. The ApiClient takes an argument `mockDelay`. Set that to `true` on line 5 of `App.tsx`.
    Add some visual indication to the UI during the initial "loading" time and any time the page is waiting for the server to respond.
    The style design doesn't need to look good, but it should indicate what the user can and cannot do.
-4. Bonus! Make the todo items re-orderable using drag-and-drop. You are more than welcome to use a 3rd party library for this, or you can roll vanilla.
+4. Make the todo items re-orderable using drag-and-drop. Please use a 3rd party library for this. Why did you choose the library you used?
 
 ## Tips
 

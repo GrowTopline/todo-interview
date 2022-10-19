@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: topline_postgres
+    image: postgres:14
+    ports:
+      - 5432:5432
+    environment:
+      - 'POSTGRES_PASSWORD=local'
+      - 'POSTGRES_USER=local'
+      - 'POSTGRES_DB=interview'
