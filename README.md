@@ -48,7 +48,8 @@ The server that acts as an intermediary between the front end and the database.
 2. "Mark Done" doesn't appear to work at all. Why not?
    Fix this bug and make sure the page updates once the ToDo has been marked as "done".
    How could the API have been better designed to make the bug more noticable?
-3. Use a 3rd party library to make the ToDos items re-orderable using drag-and-drop on the front end. Why did you choose the library you chose?
+3. Add UI elements to make the ToDos re-orderable on the front end.
+   We aren't judging your style, but the user should be able to change the order to their preference.
    Update the server to persist the order of ToDos. When the user reloads the page, the order should stay the same. Will your solution work for 10,000+ ToDos? It's ok if the answer is no, but please write what would go wrong if the number of ToDos increases significanly.
 
 ## Tips
