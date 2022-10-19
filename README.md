@@ -38,7 +38,7 @@ An API client that interacts with a fake database. Read the file over, but you s
   If you can't use Docker, please send elliot@growtopline.com an email and we can figure something else out for you.
 - Once you've started the databse, please run the initialization script:
   `psql -f server/db-init.sql postgresql://local:local@localhost:5432/interview`.
-  This will create a table `todo` in your database with columns `label` and `done`.
+  This will create a table `todo` in your database with columns `id`, `label` and `done`.
 - Install dependencies for the project with `yarn install`.
 - Start the backend server with `yarn server`.
 - Start the frontend development server with `yarn start`.
@@ -47,18 +47,16 @@ An API client that interacts with a fake database. Read the file over, but you s
 
 1. The page doesn't change when you click the "Add ToDo" button. Why not?
    Fix this bug and describe the tradeoffs in your implementation. Would your solution work if there were lots of (10,000+) todos?
-   It's perfectly fine if the answer is no, but please discuss what would go wrong when the number of ToDos increases significantly
+   It's perfectly fine if the answer is no, but please write what would go wrong when the number of ToDos increases significantly
 2. "Mark Done" doesn't appear to work at all. Why not?
    Fix this bug and make sure the page updates once the ToDo has been marked as "done".
    How could the API have been better designed to make the bug more noticable?
-3. The ApiClient takes an argument `mockDelay`. Set that to `true` on line 5 of `App.tsx`.
-   Add some visual indication to the UI during the initial "loading" time and any time the page is waiting for the server to respond.
-   The style design doesn't need to look good, but it should indicate what the user can and cannot do.
-4. Make the todo items re-orderable using drag-and-drop. Please use a 3rd party library for this. Why did you choose the library you chose?
+3. Use a 3rd party library to make the ToDos items re-orderable using drag-and-drop on the front end. Why did you choose the library you chose?
+   Update the server to persist the order of ToDos. When the user reloads the page, the order should stay the same. Will your solution work for 10,000+ ToDos? It's ok if the answer is no, but please write what would go wrong if the number of ToDos increases significanly.
 
 ## Tips
 
-- The project needs some organization. Feel free to create as many files and/or components as you need.
+- The project needs some organization. Feel free to create as many files as you need.
 - Git is your friend. Commit often and use descriptive commit messages. Push your work to GitHub so you don't lose it.
 - Get it working and then make it look good. Don't get lost in the perfect solution before you have a working solution.
 - Include more comments than you would in normal code. This will help us understand your thought process.
@@ -71,7 +69,6 @@ An API client that interacts with a fake database. Read the file over, but you s
 1.
 2.
 3.
-4.
 
 ## Submitting
 

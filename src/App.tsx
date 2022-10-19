@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ApiClient, ToDo } from './ApiClient';
 import './App.css';
 
-const apiClient = new ApiClient(false);
+const apiClient = new ApiClient();
 
 function App() {
   const [todos, setTodos] = useState<ToDo[]>([]);
