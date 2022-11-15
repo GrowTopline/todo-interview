@@ -34,7 +34,7 @@ An API client that interacts with a fake database. Read the file over, but you s
 ## Instructions
 
 1. The page doesn't change when you click the "Add ToDo" button. Why not?
-   Fix this bug and describe the tradeoffs in your implementation. Would your solution work if there were lots of (10,000+) todos?
+   Fix this bug and describe the tradeoffs in your implementation. Would your solution work if a user had lots of (1,000,000+) todos?
    It's perfectly fine if the answer is no, but please discuss what would go wrong when the number of ToDos increases significantly
 2. "Mark Done" doesn't appear to work at all. Why not?
    Fix this bug and make sure the page updates once the ToDo has been marked as "done".
@@ -42,7 +42,8 @@ An API client that interacts with a fake database. Read the file over, but you s
 3. The ApiClient takes an argument `mockDelay`. Set that to `true` on line 5 of `App.tsx`.
    Add some visual indication to the UI during the initial "loading" time and any time the page is waiting for the server to respond.
    The style design doesn't need to look good, but it should indicate what the user can and cannot do.
-4. Bonus! Make the todo items re-orderable using drag-and-drop. You are more than welcome to use a 3rd party library for this, or you can roll vanilla.
+4. Make the todo items re-orderable using drag-and-drop. You are more than welcome to use a 3rd party library for this, or you can roll vanilla.
+   If you chose to use a library, why did you pick that library? If you chose to write the logic yourself, why did you choose to do that?
 
 ## Tips
 
@@ -54,11 +55,12 @@ An API client that interacts with a fake database. Read the file over, but you s
 
 ## Responses
 
-(your responses to the questions in the instructions should go here):
+Please write your responses to the questions in the instructions here. Please indicate any tradeoffs you made.
 
 1.
 2.
 3.
+4.
 
 ## Submitting
 
