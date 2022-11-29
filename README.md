@@ -20,14 +20,13 @@ Clear writing and expressing your ideas is just as valuable as writing great cod
 Make a fork of this repo on your own GitHub account and then clone it down to your personal computer.
 
 - You'll need to run an instance of a Postgres database on your development machine.
-  The `docker-compose.yml` file includes instructions to spin up an instance of Postgres and expose port 5432.
+  The `docker-compose.yml` file includes instructions to spin up an instance of Postgres and expose port 5555.
   If you can't use Docker, please send elliot@growtopline.com an email and we can figure something else out for you.
 - Once you've started the databse, please run the initialization script:
-  `psql -f server/db-init.sql postgresql://local:local@localhost:5432/interview`.
+  `psql -f db-init.sql postgresql://local:local@localhost:5555/interview`.
   This will create a table `todo` in your database with columns `id`, `label` and `done`.
 - Install dependencies for the project with `yarn install`.
 - Start the backend server with `yarn server`.
-- Start the frontend development server with `yarn start`.
 
 If you have trouble, please don't hesistate to reach out.
 
@@ -54,11 +53,13 @@ If you have trouble, please don't hesistate to reach out.
 
 ## Tips
 
-- The project needs some organization. Feel free to create as many files as you need.
+- The project needs some organization. Feel free to create as many files and folders as you need.
 - Git is your friend. Commit often and use descriptive commit messages. Push your work to GitHub so you don't lose it.
 - Get it working and then make it look good. Don't get lost in the perfect solution before you have a working solution.
+- Write down your responses to all the questions in the prompt before moving on to the next prompt.
 - Include more comments than you would in normal code. This will help us understand your thought process.
 - Take breaks when you need them.
+- You don't have to finish all of the prompts. We prefer thorough, well thought out responses over a complete solution without written responses.
 
 ## Responses
 

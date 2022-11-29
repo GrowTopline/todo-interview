@@ -5,7 +5,7 @@ services:
     container_name: topline_postgres
     image: postgres:14
     ports:
-      - 5432:5432
+      - 5555:5432
     environment:
       - 'POSTGRES_PASSWORD=local'
       - 'POSTGRES_USER=local'

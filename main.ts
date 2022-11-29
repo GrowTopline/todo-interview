@@ -4,7 +4,7 @@ import pg from 'pg';
 
 const app: Express = express();
 const client = new pg.Client({
-  connectionString: 'postgresql://local:local@localhost:5432/interview',
+  connectionString: 'postgresql://local:local@localhost:5555/interview',
 });
 
 // Set up middlewear
