@@ -11,6 +11,9 @@ Google and Stack Overflow are invaluable tools in our daily lives, and we wouldn
 We'd really like to see every part of your development process, so please _record your screen while you work_.
 
 In addition to writing the code required by the instructions, write down your answers to the questions in the instructions directly in this README file.
+Most of the questions are open ended, and you don't need to make your code handle the questions below each prompt.
+Please do discuss how you would make your code handle those questions.
+Clear writing and expressing your ideas is just as valuable as writing great code.
 
 ## Getting started
 
@@ -28,32 +31,26 @@ Make a fork of this repo on your own GitHub account and then clone it down to yo
 
 If you have trouble, please don't hesistate to reach out.
 
-## Important Project contents
-
-There are a few files that are important for this app:
-
-### src/App.tsx
-
-The main logic of the "frontend" of this app is in App.tsx. You should start your work there.
-
-### server/main.ts
-
-The server that acts as an intermediary between the front end and the database.
-
 ## Instructions
 
-1. The page doesn't change when you click the "Add ToDo" button. Why not?
-   Fix this bug and describe the tradeoffs in your implementation. Would your solution work if a user had lots of (1,000,000+) todos?
-   It's perfectly fine if the answer is no, but please discuss what would go wrong when the number of ToDos increases significantly
-2. "Mark Done" doesn't appear to work at all. Why not?
-   Fix this bug and make sure the page updates once the ToDo has been marked as "done".
-   How could the API have been better designed to make the bug more noticable?
-3. The ApiClient takes an argument `mockDelay`. Set that to `true` on line 5 of `App.tsx`.
-   Add some visual indication to the UI during the initial "loading" time and any time the page is waiting for the server to respond.
-   The style design doesn't need to look good, but it should indicate what the user can and cannot do.
-4. Make the todo items re-orderable using drag-and-drop. You are more than welcome to use a 3rd party library for this, or you can roll vanilla.
-   If you chose to use a library, why did you pick that library? If you chose to write the logic yourself, why did you choose to do that?
-   Update the server to persist the order of ToDos. When the user reloads the page, the order should stay the same. Will your solution work for 10,000+ ToDos? It's ok if the answer is no, but please write what would go wrong if the number of ToDos increases significanly.
+1. Add an endpoint to get the number of completed todos
+   - How does your solution scale with the number of todos? Would it work for >1 million todos?
+   - How could you make the endpoint more performant? What would the tradeoffs be if you implemented that speed boost?
+2. Make the server add a "Brush Teeth" todo every morning at 8am pacific time. You can use a library to schedule tasks.
+   - How did you schedule your job?
+   - What tradeoffs did you consider when picking your library (or creating your own scheduling service)?
+   - What would happen if the job server was down at 8am - would the job eventually be created? (it's ok if the answer is "no", but please explain how you might solve the problem if the answer had to be "yes")
+   - What would happen if you had multiple instances of the server - would multiple todos get created? (it's ok if the answer is "yes", but please explain how you might solve the problem if the answer had to be "no")
+   - Can you test this job to make sure it works without having to wait for 8am to test it?
+3. Make a job that adds a "Wear Sunscreen" todo every morning at 8am pacific time if the temperature in Atlanta will be above 75 degrees Farenheight during the day. Use a 3rd party service to find the temperature.
+   - What tradeoffs did you consider when picking your service?
+   - How did you handle api secrets?
+   - How would those secrets work in a production environment?
+   - What could you do if there was an error when fetching temperature data so that users and engineers were informed and could take action? You don't need to implement this, but discuss what you would recommend to a UX designer and what tools you might use internally.
+4. Write a unit test for the code you wrote in questions 3 and 4 using the unit testing framework of your choice.
+   - What tradeoffs did you make in testability?
+   - What did you have to fake or mock?
+   - Why did you choose the the testing framework you chose?
 
 ## Tips
 

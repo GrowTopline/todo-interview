@@ -7,6 +7,7 @@ const client = new pg.Client({
   connectionString: 'postgresql://local:local@localhost:5432/interview',
 });
 
+// Set up middlewear
 app.use(cors());
 app.use(express.json());
 
