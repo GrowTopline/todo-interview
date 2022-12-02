@@ -40,7 +40,7 @@ export class ApiClient {
     const currentToDos = await this.getToDos();
     const id = String(Math.random() * 1e18);
     const newToDo = { id, label, done: false };
-    this.saveTodos([...currentToDos, newToDo]);
+    await this.saveTodos([...currentToDos, newToDo]);
     return newToDo;
   }
 
@@ -49,13 +49,12 @@ export class ApiClient {
    * @param id The ID of the todo to toggle
    */
   async toggleDone(id: string): Promise<ToDo | undefined> {
-    await this.delay();
     const currentToDos = await this.getToDos();
     const todoToUpdate = currentToDos.find((todo) => todo.id === id);
     if (todoToUpdate) {
       todoToUpdate.done = !todoToUpdate.done;
     }
-    this.saveTodos(currentToDos);
+    await this.saveTodos(currentToDos);
     return todoToUpdate;
   }
 
@@ -63,7 +62,8 @@ export class ApiClient {
    * Overwrites the existing DB with the provided todos
    * @param todos The todos to save
    */
-  saveTodos(todos: ToDo[]) {
+  async saveTodos(todos: ToDo[]) {
+    await this.delay();
     localStorage.setItem(this.LOCALSTORAGE_KEY, JSON.stringify(todos));
   }
 
