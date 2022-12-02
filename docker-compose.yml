@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   postgres:
-    container_name: topline_postgres
+    container_name: interview_postgres
     image: postgres:14
     ports:
       - 5555:5432
