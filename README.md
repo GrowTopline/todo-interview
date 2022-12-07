@@ -22,13 +22,14 @@ Make a fork of this repo on your own GitHub account and then clone it down to yo
 - You'll need to run an instance of a Postgres database on your development machine.
   The `docker-compose.yml` file includes instructions to spin up an instance of Postgres and expose port 5555.
   If you can't use Docker, please send elliot@growtopline.com an email and we can figure something else out for you.
-- Once you've started the databse, please run the initialization script:
+- Run `docker-compose up` to start the database
+- Once you've started the database, please run the initialization script:
   `psql -f db-init.sql postgresql://local:local@localhost:5555/interview`.
   This will create a table `todo` in your database with columns `id`, `label` and `done`.
 - Install dependencies for the project with `yarn install`.
 - Start the backend server with `yarn server`.
 
-If you have trouble, please don't hesistate to reach out.
+If you have trouble, please don't hesitate to reach out.
 
 ## Instructions
 
@@ -41,7 +42,7 @@ If you have trouble, please don't hesistate to reach out.
    - What would happen if the job server was down at 8am - would the job eventually be created? (it's ok if the answer is "no", but please explain how you might solve the problem if the answer had to be "yes")
    - What would happen if you had multiple instances of the server - would multiple todos get created? (it's ok if the answer is "yes", but please explain how you might solve the problem if the answer had to be "no")
    - Can you test this job to make sure it works without having to wait for 8am to test it?
-3. Make a job that adds a "Wear Sunscreen" todo every morning at 8am pacific time if the temperature in Atlanta will be above 75 degrees Farenheight during the day. Use a 3rd party service to find the temperature.
+3. Make a job that adds a "Wear Sunscreen" todo every morning at 8am pacific time if the temperature in Atlanta will be above 75 degrees fahrenheit any time during the day. Use a 3rd party service to find the temperature.
    - What tradeoffs did you consider when picking your service?
    - How did you handle api secrets?
    - How would those secrets work in a production environment?

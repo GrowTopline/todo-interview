@@ -37,5 +37,5 @@ app.put('/todo/:id', async (req: Request, res: Response) => {
 
 app.listen(8080, async () => {
   await client.connect();
-  console.log('Server is running at https://localhost:8080');
+  console.log('Server is running at http://localhost:8080');
 });
